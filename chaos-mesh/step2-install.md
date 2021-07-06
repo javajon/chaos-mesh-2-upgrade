@@ -13,8 +13,7 @@ Install the chart:
 ```bash
 helm install chaos-mesh chaos-mesh/chaos-mesh \
   --version v2.0.0-beta.2 \
-  --namespace chaos-mesh \
-  --set dashboard.create=true
+  --namespace chaos-mesh
 ```{{execute}}
 
 Verify the Chaos Mesh operator has started its control plane:
