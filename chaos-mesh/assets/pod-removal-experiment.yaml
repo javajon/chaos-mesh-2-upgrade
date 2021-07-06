@@ -1,15 +1,18 @@
 apiVersion: chaos-mesh.org/v1alpha1
-kind: PodChaos
+kind: Schedule
 metadata:
   name: pod-kill-example
   namespace: chaos-mesh
 spec:
-  action: pod-kill
-  mode: one
-  selector:
-    namespaces:
+  schedule: '@every 15s'
+  type: PodChaos
+  historyLimit: 5
+  concurrencyPolicy: Forbid
+  podChaos:
+    action: pod-kill
+    mode: one
+    selector:
+      namespaces:
       - chaos-sandbox
-    labelSelectors:
-      chaos: "blast-here"
-  scheduler:
-    cron: "@every 15s"
+      labelSelectors:
+        chaos: blast-here

@@ -1,17 +1,20 @@
 apiVersion: chaos-mesh.org/v1alpha1
-kind: NetworkChaos
+kind: Schedule
 metadata:
   name: web-show-network-delay
 spec:
-  action: delay # the specific chaos action to inject
-  mode: one # the mode to run chaos action; supported modes are one/all/fixed/fixed-percent/random-max-percent
-  selector: # pods where to inject chaos actions
-    namespaces:
+  schedule: '@every 60s'
+  type: NetworkChaos
+  historyLimit: 5
+  concurrencyPolicy: Forbid
+  networkChaos:
+    action: delay
+    mode: one
+    selector:
+      namespaces:
       - default
-    labelSelectors:
-      "app": "web-show"  # the label of the pod for chaos injection
-  delay:
-    latency: "10ms"
-  duration: "30s" # duration for the injected chaos experiment
-  scheduler: # scheduler rules for the running time of the chaos experiments about pods.
-    cron: "@every 60s"
+      labelSelectors:
+        app: web-show
+    delay:
+      latency: 10ms
+    duration: 30s
