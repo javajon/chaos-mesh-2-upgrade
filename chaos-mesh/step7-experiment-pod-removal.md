@@ -18,7 +18,7 @@ The Chaos Mesh has installed several custom resources:
 
 `kubectl get crds`{{execute}}
 
-For this experiment we'll create a declarative YAML manifests that defines an experiment around `podchaos.chaos-mesh.org`. The experiment specification for the _PodChaos_ manifest appears this way:
+For this experiment we'll create a declarative YAML manifests that defines an experiment around `schedule.chaos-mesh.org` and `podchaos.chaos-mesh.org`. The experiment specification for the _Schedule_ with nested _PodChaos_ manifest appears this way:
 
 `ccat pod-removal-experiment.yaml`{{execute}}
 
@@ -34,7 +34,7 @@ Because the Chaos Mesh follows the Kubernetes Operator pattern with CRDs, the ex
 
 The experiment is now running.
 
-`kubectl get PodChaos -n chaos-mesh`{{execute}}
+`kubectl get Schedule -n chaos-mesh`{{execute}}
 
 ## Observe
 
