@@ -46,4 +46,4 @@ and resumed:
 
 Since the NetworkChaos is like any other Kubernetes resource, the experiment can be easily removed.
 
-`kubectl delete -f network-delay-experiment.yaml`{{execute}}
+`kubectl delete -f scheduled-network-delay-experiment.yaml`{{execute}}
