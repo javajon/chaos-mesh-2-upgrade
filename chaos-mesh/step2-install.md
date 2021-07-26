@@ -12,7 +12,7 @@ Install the chart:
 
 ```bash
 helm install chaos-mesh chaos-mesh/chaos-mesh \
-  --version v2.0.0-beta.2 \
+  --version v2.0.0 \
   --namespace chaos-mesh
 ```{{execute}}
 
