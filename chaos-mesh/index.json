@@ -28,12 +28,17 @@
       },
       {
         "title": "Network Delay Experiment",
-        "text": "step5-experiment1.md",
+        "text": "step5-experiment-network-delay.md",
+        "code": "clear.sh"
+      },
+      {
+        "title": "Scheduled Experiment",
+        "text": "step6-scheduled-expriment.md",
         "code": "clear.sh"
       },
       {
         "title": "Pod Removal Experiment",
-        "text": "step6-experiment2.md",
+        "text": "step7-experiment-pod-removal.md",
         "code": "clear.sh"
       }
     ],
@@ -52,6 +57,7 @@
         {"file": "web-show-deployment.yaml", "target": "/root"},
         {"file": "web-show-service.yaml", "target": "/root"},
         {"file": "network-delay-experiment.yaml", "target": "/root"},
+        {"file": "scheduled-network-delay-experiment.yaml", "target": "/root"},
         {"file": "pod-removal-experiment.yaml", "target": "/root"},
         {"file": "token.sh", "target": "/usr/local/bin", "chmod": "+x"}
       ]
