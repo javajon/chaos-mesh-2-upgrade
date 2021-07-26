@@ -10,7 +10,7 @@ The experiment declares that a 10ms network delay should be injected every minut
 
 `kubectl get deployments,pods -l app='web-show'`{{execute}}
 
-## Apply Experiment
+## Apply Scheduled Experiment
 
 Apply the scheduled experiment.
 
