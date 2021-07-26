@@ -32,7 +32,7 @@ You can reference these resources to create declarative YAML manifests that defi
 
 `ccat network-delay-experiment.yaml`{{execute}}
 
-The experiment declares that a 10ms network delay should be injected every minute that lasts for 30 seconds. The delay will only be applied to the target service labeled "app": "web-show". This is the _blast radius_. Only the web-show app has that label:
+The experiment declares that a 10ms network delay should be injected. The delay will only be applied to the target service labeled "app": "web-show". This is the _blast radius_. Only the web-show app has that label:
 
 `kubectl get deployments,pods -l app='web-show'`{{execute}}
 
@@ -50,7 +50,7 @@ The experiment is now running.
 
 <img align="right" width="250" src="./assets/network-delay.png">
 Access the [web-show application](https://[[HOST_SUBDOMAIN]]-30081-[[KATACODA_HOST]].environments.katacoda.com/.
-) (or use the tab). The application has a built-in graph that will show the latency it's experiencing. With the experiment applied you will see the 10ms delay every 30 seconds. Look at the dashboard, find the experiment, and drill down on its details.
+) (or use the tab). The application has a built-in graph that will show the latency it's experiencing. With the experiment applied you will see the 10ms delay. Look at the dashboard, find the experiment, and drill down on its details.
 
 ## Update Experiment
 

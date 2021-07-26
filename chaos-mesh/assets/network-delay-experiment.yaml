@@ -1,20 +1,14 @@
 apiVersion: chaos-mesh.org/v1alpha1
-kind: Schedule
+kind: NetworkChaos
 metadata:
   name: web-show-network-delay
 spec:
-  schedule: '@every 10s'
-  type: NetworkChaos
-  historyLimit: 5
-  concurrencyPolicy: Forbid
-  networkChaos:
-    action: delay
-    mode: one
-    selector:
-      namespaces:
-      - default
-      labelSelectors:
-        app: web-show
-    delay:
-      latency: 10ms
-    duration: 5s
+  action: delay
+  mode: one
+  selector:
+    namespaces:
+    - default
+    labelSelectors:
+      app: web-show
+  delay:
+    latency: 10ms
